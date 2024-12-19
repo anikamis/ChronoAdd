@@ -46,7 +46,7 @@ run_aoi_prsmix () {
         trait_specific_score_file=add_in_prsmix/with_${i}/${trait}.score_list.txt
         out=add_in_prsmix/with_${i}/all/${trait}
         
-        Rscript --vanilla ${obj_script_dir}/helper/run_prsmix.R $trait $covariate_file $score_files_list $trait_specific_score_file $pheno_file $pheno_name $isbinary $out $ncores
+        Rscript --vanilla ${obj_script_dir}/helper/run_PRSmix.R $trait $covariate_file $score_files_list $trait_specific_score_file $pheno_file $pheno_name $isbinary $out $ncores
 
         echo -e "finished" >> add_in_prsmix/with_${i}/aoi.finished.txt
     done
