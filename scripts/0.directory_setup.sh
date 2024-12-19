@@ -12,7 +12,7 @@ set_up_dirs () {
     pgs_to_pgp=$2
 
     # make directory and copy directory structure
-    mkdir for_${trait} ; cp dirs.txt for_${trait}/. ; cd for_${trait} 
+    mkdir for_${trait}  ; cd for_${trait} 
     mkdir -p scores/summed_scores scores/raw_scores add_in_prsmix pgs_catalog_harmonized_weights weights all_harmonized_weights
 
     cp $cwd/$pgs_to_pgp add_in_prsmix/${trait}.pgs_to_pgp.tsv
