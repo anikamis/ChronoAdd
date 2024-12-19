@@ -34,7 +34,7 @@ run_plink_scoring () {
 
     echo -e "starting plink2 scoring for all chromosomes for trait ${trait}! \n"
 
-    num_cols=$( head -1 all_harmonized_weights/${trait}.all_harmonized_weights.ALL_SNPS.txt | wc -w ) ; parallel -j $3 plink2 --threads $4 --memory $5 --bfile $obj_plink_file_prefix{} --score all_harmonized_weights/${trait}.all_harmonized_weights.ALL_SNPS.chr{}.txt cols=fid,scoresums no-mean-imputation header-read --score-col-nums 4-$num_cols --out scores/raw_scores/${trait}.ACAF.chr{} ::: {22..1} X
+    num_cols=$( head -1 all_harmonized_weights/${trait}.all_harmonized_weights.ALL_SNPS.ALL_CHRS.txt | wc -w ) ; parallel -j $3 plink2 --threads $4 --memory $5 --bfile $obj_plink_file_prefix{} --score all_harmonized_weights/${trait}.all_harmonized_weights.ALL_SNPS.chr{}.txt cols=fid,scoresums no-mean-imputation header-read --score-col-nums 4-$num_cols --out scores/raw_scores/${trait}.ACAF.chr{} ::: {22..1} X
 
     echo -e "finished plink2 scoring for all chromosomes for trait ${trait}! \n"
 

@@ -2,7 +2,6 @@ library(PRSmix)
 
 args = commandArgs(trailingOnly=TRUE)
 
-${trait} ${covariate_file} ${pheno_file} ${pheno_name} ${out_dir} ${sscore_prefix} ${score_list} ${ncores}
 
 trait = args[1]
 covariate_file = args[2]
