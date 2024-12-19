@@ -25,7 +25,7 @@ set_up_dirs () {
     # create all add_in_prsmix subdirectories for each ChronoAdd iteration
     # and create PRSmix input score files for each ChronoAdd iteration
     counter=1
-    for pgp in $( awk -F "\t" '{print $2}' $pgs_to_pgp | uniq ) ; do mkdir -p add_in_prsmix/with_${counter}/all && outfile=add_in_prsmix/with_${counter}/${trait}.score_list.txt ; linenum=$( grep -n "$pgp" $pgs_to_pgp | tail -1 | cut -d : -f 1 ) ; echo $pgp ; echo $linenum ; echo $outfile ; awk -F "\t" '{print $1}' $pgs_to_pgp | head -n $linenum > $outfile ; counter=$((counter + 1)) ; done
+    for pgp in $( awk -F "\t" '{print $2}' $pgs_to_pgp | uniq ) ; do mkdir -p add_in_prsmix/with_${counter}/all && outfile=add_in_prsmix/with_${counter}/${trait}.score_list.txt ; linenum=$( grep -n "$pgp" $pgs_to_pgp | tail -1 | cut -d : -f 1 ) ;  awk -F "\t" '{print $1}' $pgs_to_pgp | head -n $linenum > $outfile ; counter=$((counter + 1)) ; done
 
     cd $cwd
 }
