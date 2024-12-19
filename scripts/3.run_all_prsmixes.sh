@@ -61,7 +61,7 @@ cwd=$PWD
 obj_trait_dir=${cwd}/${trait_dir}
 obj_script_dir=${cwd}/${script_dir}
 
-run_aoi_prsmix $trait ${cwd}/$covariate_file ${cwd}/$pheno_file $isbinary $ncores
+run_aoi_prsmix $trait ${cwd}/$covariate_file ${cwd}/$pheno_file $pheno_name $isbinary $ncores
 
 echo -e "finished all step 3 tasks for trait ${trait} ! \n"
 cd $cwd
